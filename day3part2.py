@@ -5,13 +5,12 @@ def total_joltage(filepath):
         for line in file:
             line = line.rstrip()
             if line:
-                bank = [int(s) for s in line]
                 bank_joltage = ''
                 for i in range(n,0,-1):
-                    j = len(bank)-(i-1)
-                    ind = bank.index(max(bank[:j]))
-                    bank_joltage += str(bank[ind])
-                    bank = bank[ind+1:]
+                    j = len(line)-(i-1)
+                    ind = line.index(max(line[:j]))
+                    bank_joltage += str(line[ind])
+                    line = line[ind+1:]
                 counter += int(bank_joltage)
     return counter
 
