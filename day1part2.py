@@ -6,9 +6,10 @@ def get_password(filepath):
             if line.rstrip():
                 move = int(line.replace("L","-").replace("R",""))
                 sum = pos + move
-                passes = abs(sum//100) - (sum<0)*(pos==0) - (sum>0)*(sum%100==0)
-                pos = sum%100
-                counter += passes + (pos==0) 
+                posf = sum%100
+                passes = abs(sum//100) + ((posf==0)-(pos==0))*(sum<=0)
+                pos = posf
+                counter += passes 
     return counter
 
 if __name__ == "__main__":
