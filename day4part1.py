@@ -14,8 +14,8 @@ def count_rolls(filepath):
         M = np.array([list(line.rstrip()) for line in file if line.rstrip()])
     M = (M=='@').astype(int)
     conv = signal.convolve2d(M,k,mode='same')
-    res = (conv<4)*M
-    return np.sum(res)
+    R = (conv<4)*M
+    return np.sum(R)
 
 if __name__ == "__main__":
     filepath = 'inputs/day4.txt'
