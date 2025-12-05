@@ -18,7 +18,7 @@ def fresh_ingredients(filepath):
                 rngs.append(rng)
             else:
                 IDs.append(int(line))
-    func = lambda x: any([(x>=rng[0])*(x<=rng[1]) for rng in rngs])
+    func = lambda x: any(r0 <= x <= r1 for r0, r1 in rngs)
     counter = 0
     for ID in IDs:
         counter += func(ID)
