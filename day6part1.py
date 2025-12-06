@@ -6,10 +6,8 @@ Created on 2025-12-06 10:32:46 UTC+01:00
 """
 
 def math_homework(filepath):
-    table = []
     with open(filepath) as file:
-        for line in file:
-            table.append(line.rstrip().split())
+        table = [line.rstrip().split() for line in file]
     oper = table[-1]
     res = table[0]
     for i in range(1,len(table)-1):
