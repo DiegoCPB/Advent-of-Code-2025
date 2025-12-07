@@ -7,14 +7,7 @@ Created on 2025-12-07 12:23:17 UTC+01:00
 
 def beam_splits(filepath):
     with open(filepath) as file:
-        table = []
-        for line in file:
-            table_i = []
-            for char in list(line.strip('\n')):
-                if char=='^': table_i.append(-1)
-                elif char=='.': table_i.append(0)
-                else: table_i.append(1)
-            table.append(table_i)
+        table = [[-1 if char=='^' else 0 if char=='.' else 1 for char in list(line.strip('\n'))] for line in file]
     counter = 0
     for i in range(1,len(table)):
         for j in range(len(table[0])):
