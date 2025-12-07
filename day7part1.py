@@ -20,5 +20,5 @@ def beam_splits(filepath):
     return counter
 
 if __name__ == "__main__":
-    filepath = 'tests/day7.txt'
+    filepath = 'inputs/day7.txt'
     print(beam_splits(filepath))

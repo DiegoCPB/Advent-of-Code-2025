@@ -19,5 +19,5 @@ def beam_splits(filepath):
     return sum(table[-1])
 
 if __name__ == "__main__":
-    filepath = 'tests/day7.txt'
+    filepath = 'inputs/day7.txt'
     print(beam_splits(filepath))
