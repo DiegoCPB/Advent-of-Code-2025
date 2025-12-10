@@ -22,12 +22,10 @@ def circuits(filepath):
             D[it] = np.linalg.norm(C[i]-C[j])
             it += 1
     order = np.argsort(D)
-    links = links[order]
-    graph = sparse.lil_array((nC,nC))
-    for k in range(n):
-        i,j = links[k]
-        graph[i,j] = graph[j,i] = 1
-    _, labels = connected_components(graph, directed=False, return_labels=True)
+    row,col = links[order][:n].T
+    val = np.ones(len(row))
+    graph = sparse.csr_array((val,(row,col)),shape=(nC,nC))
+    _, labels = connected_components(graph+graph.T, directed=False, return_labels=True)
     _, circuit_lenghts = np.unique(labels,return_counts=True)
     return np.prod(np.sort(circuit_lenghts)[-3:])
 
