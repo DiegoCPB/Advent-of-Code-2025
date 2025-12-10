@@ -13,8 +13,9 @@ def circuits(filepath):
     n = 1000
     C = np.loadtxt(filepath, delimiter=",")
     nC = len(C)
-    D = np.zeros((nC-1)*nC//2)
-    links = np.zeros([(nC-1)*nC//2,2],dtype=int)
+    nD = (nC-1)*nC//2
+    D = np.zeros(nD)
+    links = np.zeros([nD,2],dtype=int)
     it = 0
     for i in range(nC):
         for j in range(i+1,nC):
