@@ -8,7 +8,7 @@ Created on 2025-12-10 18:26:26 UTC+01:00
 import numpy as np
 
 def rectangles(filepath):
-    C = np.loadtxt(filepath, delimiter=",")
+    C = np.loadtxt(filepath, delimiter=",",dtype=int)
     nC = len(C)
     maxA = 0
     for i in range(nC):
