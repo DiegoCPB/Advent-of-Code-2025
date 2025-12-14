@@ -37,5 +37,5 @@ def fitting_presents(filepath):
     return possible,impossible,undetermined 
 
 if __name__ == "__main__":
-    filepath = 'tests/day12.txt'
+    filepath = 'inputs/day12.txt'
     print(fitting_presents(filepath))
