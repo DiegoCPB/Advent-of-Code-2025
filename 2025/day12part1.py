@@ -32,10 +32,10 @@ def fitting_presents(filepath):
             possible += 1
         else:
             # There as no undetermined cases on the input
-            # However, in the example, the last one is undetermined
+            # However, in the example, the all cases are undetermined
             undetermined += 1
     return possible,impossible,undetermined 
 
 if __name__ == "__main__":
-    filepath = 'inputs/day12.txt'
+    filepath = 'tests/day12.txt'
     print(fitting_presents(filepath))
