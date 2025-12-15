@@ -32,7 +32,7 @@ def fitting_presents(filepath):
             possible += 1
         else:
             # There as no undetermined cases on the input
-            # However, in the example, the all cases are undetermined
+            # However, in the example, all cases are undetermined
             undetermined += 1
     return possible,impossible,undetermined 
 
