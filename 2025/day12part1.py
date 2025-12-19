@@ -26,12 +26,14 @@ def fitting_presents(filepath):
     possible = 0
     undetermined = 0
     for size, quants in regions:
-        if np.prod(size) < np.inner(quants,psizes):
+        if min(size) < 3:
+            impossible += 1
+        elif np.prod(size) < np.inner(quants,psizes):
             impossible += 1
         elif np.prod(size//3) >= np.sum(quants):
             possible += 1
         else:
-            # There as no undetermined cases on the input
+            # There are no undetermined cases on the input
             # However, in the example, all cases are undetermined
             undetermined += 1
     return possible,impossible,undetermined 
